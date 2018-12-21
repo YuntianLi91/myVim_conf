@@ -1,6 +1,5 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-filetype plugin on 			  "开启剪贴板 "
 
 "=================================================="
 "===============General settings==================="
@@ -68,7 +67,7 @@ Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "	C++代码折叠
-Plugin 'LucHermitte/VimFold4C'
+"Plugin 'LucHermitte/VimFold4C'
 "	快速定位插件
 Plugin 'ctrlpvim/ctrlp.vim'
 "	显示tags (TagbarToggle)
@@ -82,7 +81,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "默认配置文件路径"
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "打开vim时不再询问是否加载ycm_extra_conf.py配置"
 let g:ycm_confirm_extra_conf=0
 set completeopt=longest,menu
@@ -138,29 +137,4 @@ nnoremap <leader>y :CopyCode<cr>
 nnoremap <leader>p :PasteCode<cr>
 nnoremap <leader>U :GoToFunImpl<cr>
 
-""""""""""""""""""""""""""""""""""""""""C语言的编译运行"""""""""""""""""""""""""""""""""""""""""
-" <F5>编译C/py语言，<F6>运行
-augroup ccompile
-    autocmd Filetype c map <F5> <Esc>:w<CR>:!gcc % -std=c99 -g -o %< -lm <CR>
-    autocmd Filetype cpp map <F5> <Esc>:w<CR>:!g++ % -std=c++11 -g -o %< -lm <CR>
-    autocmd Filetype python map <F5> <Esc>:w<CR>:!python % <CR>
-augroup END
-
-augroup crun
-    autocmd Filetype c map <F6> <Esc>:! ./%< <CR>
-    autocmd Filetype cpp map <F6> <Esc>:! ./%< <CR>
-augroup END
-
-" 整行注释
-augroup comment
-    autocmd Filetype c noremap <buffer> <localleader>/ I//<Esc>
-    autocmd Filetype cpp noremap <buffer> <localleader>/ I//<Esc>
-    autocmd Filetype h noremap <buffer> <localleader>/ I//<Esc>
-augroup ENDkien/rainbow_parentheses.vim
-
-augroup nocomment
-    autocmd Filetype c noremap <buffer> <localleader>. ^xx
-    autocmd Filetype cpp noremap <buffer> <localleader>. ^xx
-    autocmd Filetype h noremap <buffer> <localleader>. ^xx
-augroup END
 

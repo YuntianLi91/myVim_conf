@@ -14,12 +14,14 @@ flags = [
   'c++',
   '-I',
   '.',
-  '-I'
-  '/usr/include/eigen3'
   # '-I',
   # './third-party/googletest/googletest/include',
-  '-isystem',
-  '/usr/include/c++/7'
+  '-isystem', '/usr/include/c++/7.3.0',
+  '-isystem', '/usr/lib/gcc/x86_64-linux-gnu/7.3.0/'
+  '-isystem', '/usr/include/c++/7.3.0/backward',
+  '-isystem', '/usr/local/include',
+  '-isystem', '/usr/include',
+  '-isystem', '/usr/include/eigen3',
 ]
 
 
