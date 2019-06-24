@@ -5,23 +5,39 @@ import ycm_core
 flags = [
   '-Wall',
   '-std=c++14',
-  
+  '-Wextra',
+  # '-Werror',
+  '-Wno-long-long',
+  '-Wno-variadic-macros',
+  '-fexceptions',
+  '-DNDEBUG',
+  # You 100% do NOT need -DUSE_CLANG_COMPLETER in your flags; only the YCM
+  # source code needs it.
+  '-DUSE_CLANG_COMPLETER',
   # ...and the same thing goes for the magic -x option which specifies the
   # language that the files to be compiled are written in. This is mostly
   # relevant for c++ headers.
   # For a C project, you would set this to 'c' instead of 'c++'.
   '-x',
   'c++',
-  '-I',
-  '.',
+  #-----------------------------------------------------------------------------------#
+  # Manually add flags for specific libraries you need here, flag format is:
   # '-I',
   # './third-party/googletest/googletest/include',
-  '-isystem', '/usr/include/c++/7.3.0',
-  '-isystem', '/usr/lib/gcc/x86_64-linux-gnu/7.3.0/'
-  '-isystem', '/usr/include/c++/7.3.0/backward',
+  #-----------------------------------------------------------------------------------#
+  # Add support flag for C++ std library(change th version number according to your machine)
+  '-isystem', '/usr/include/c++/7.4.0',
+  '-isystem', '/usr/lib/gcc/x86_64-linux-gnu/7.4.0/'
+  '-isystem', '/usr/include/c++/7.4.0/backward',
+  # Add support flag for stand library 
   '-isystem', '/usr/local/include',
   '-isystem', '/usr/include',
+  # Add support flag for eigen3 
   '-isystem', '/usr/include/eigen3',
+  # Add support flag for ros
+  '-isystem', '/opt/ros/melodic/include',
+  # Add support for OpenCV
+  '-isystem', '/usr/local/opencv3.4/include',
 ]
 
 
