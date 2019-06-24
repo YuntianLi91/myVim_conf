@@ -53,6 +53,10 @@ set wildmenu             " vim自身命名行模式智能补全
 set completeopt-=preview " 补全时不显示窗口，只显示补全列表
 set wildmode=longest:full,full " Display Vim command mode autocompletion list
 
+" 更改光标移动键位
+nnoremap j h
+nnoremap k j
+nnoremap i k
 
 "===================================================="
 "=================Plugin Seetings===================="
